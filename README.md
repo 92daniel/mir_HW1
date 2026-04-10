@@ -164,8 +164,8 @@ python gen_beat_this_multi_json2.py
 ---
 
 ### 📊 計算最終成績
-不管是用方案 A 還是方案 B，執行成功後都會在當前目錄 (`beat_this-main/`) 產生一個 `prediction.json` 檔案。
-最後，只要把它搬到上一層，就可以評估結果。
+不管你是用方案 A 還是方案 B，執行成功後都會在當前目錄 (`beat_this-main/`) 產生一個 `prediction.json` 檔案（這就是我們這次作業微調出來的結果！）。
+最後，只要把它搬到上一層，交給老師的腳本算分數就大功告成了：
 
 ```bash
 # 1. 將生成的 prediction.json 移動到上一層 (src 目錄)
@@ -174,9 +174,16 @@ mv prediction.json ../
 # 2. 回到 src 目錄
 cd ..
 
-# 3. 執行課程提供的評估腳本，看最終成績
+# 3. 執行課程提供的評估腳本，看我們微調後的最終成績
 python eval_json.py prediction.json
 ```
+
+> **💡 補充對比測試：**
+> 如果你想親眼確認原作者模型的表現，專案資料夾裡也有附上原作者的預測結果 (`prediction_final1.json`)。
+> 
+> ```bash
+> python eval_json.py prediction_final1.json
+> ```
 
 <br>
 
