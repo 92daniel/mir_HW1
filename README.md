@@ -201,7 +201,7 @@ python eval_json.py prediction.json
 | 模型版本 | 檔案名稱 | F-Measure | Cemgil | P-Score |
 | :--- | :--- | :---: | :---: | :---: |
 | 🥇 **原作者 Checkpoint** | `prediction_final1.json` | **0.8903** | **0.8093** | **0.8828** |
-| 🥈 **微調後模型 (本次作業)** | `prediction.json` | 0.8870 | 0.8060 | 0.8778 |
+| 🥈 **微調後模型 (本次作業)** | `prediction.json` | 0.8864 | 0.7950 | 0.8779 |
 | 🥉 **課程 Baseline (老師)** | `(Baseline)` | 0.8702 | 0.7851 | 0.8603 |
 
 <br>
