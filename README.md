@@ -151,15 +151,22 @@ python gen_beat_this_multi_json.py
 ```
 
 ### 方案 B：手動指定權重 (備用方案)
-如果自動腳本抓錯檔案或發生 bug，你可以自己去看 `metrics.csv` 找出 `val_F-measure_beat` 最高分的 checkpoint，然後手動跑預測。
+如果自動腳本抓錯檔案或發生 bug，可以自己手動指定要測試的權重。目前在 `checkpoints/` 資料夾下，我已經幫你保留了兩個現成的權重可以直接測試：
+* `prediction.ckpt`：我微調出來的權重。
+* `final1.ckpt`：原作者的預訓練權重。
+
+**操作步驟：**
 1. 打開 `gen_beat_this_multi_json2.py`。
-2. 找到大約第 50 行的 `CHECKPOINT_FILENAME = "..."`，把引號內改成你要指定的 `.ckpt` 檔名並存檔。
+2. 找到大約第 50 行的 `CHECKPOINT_FILENAME = "..."`，把引號內改成你要指定的 `.ckpt` 檔名（例如 `"prediction.ckpt"`）並存檔。
 3. 執行備用腳本：
 
 ```bash
 # 確保一樣在 beat_this-main 目錄下
 python gen_beat_this_multi_json2.py
 ```
+
+> 💡 **改名提醒：**
+> 不管你手動指定哪個權重，這支腳本吐出來的結果檔名**一律都會叫 `prediction.json`**。所以，如果你是拿 `final1.ckpt` 來測，跑完後請記得手動把產生的檔案改名為 `prediction_final1.json`。
 
 ---
 
